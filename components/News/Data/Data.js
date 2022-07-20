@@ -29,4 +29,76 @@ export const DATA = [
       'https://drgaja.pl/images/obcowanie-z-natura/korzysci-z-natury-dla-kobiet.jpg',
     ],
   },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97233',
+    title: 'Wtorkowa medytacja',
+    author: 'Wiktor Noculski',
+    avatar:
+      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97123',
+    title: 'Wtorkowa medytacja',
+    author: 'Wiktor Noculski',
+    avatar:
+      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91a2a233',
+    title: 'Wtorkowa medytacja',
+    author: 'Wiktor Noculski',
+    avatar:
+      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: '3ac68afc-c235-48d3-a4f8-fbd91aa97233',
+    title: 'Wtorkowa medytacja',
+    author: 'Wiktor Noculski',
+    avatar:
+      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: '37s68afc-c605-48d3-a4f8-fbd91aa97233',
+    title: 'Wtorkowa medytacja',
+    author: 'Wiktor Noculski',
+    avatar:
+      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: '3ac68a998-c605-48d3-a4f8-fbd91aa97233',
+    title: 'Wtorkowa medytacja',
+    author: 'Wiktor Noculski',
+    avatar:
+      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
 ];

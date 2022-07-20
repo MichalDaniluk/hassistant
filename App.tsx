@@ -1,19 +1,42 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {NewsFeed} from './components/NewsFeed';
+import {NewsFeedScreen} from './screens/NewsFeedScreen';
+import {NewsFeedItemScreen} from './screens/NewsFeedItemScreen';
+import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
+  const globalScreenOptions = {
+    headerStyle: {backgroundColor: '#F3F2F2'},
+    headerTitleStyle: {color: '#28235F'},
+    headerTintColor: '#fff',
+    //headerTitleAlign: 'center',
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
-      <NewsFeed />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={globalScreenOptions}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'Witaj w Health Nation'}}
+        />
+        <Stack.Screen
+          name="NewsFeed"
+          component={NewsFeedScreen}
+          options={{title: 'Newsfeed'}}
+        />
+        <Stack.Screen
+          name="NewsFeedItem"
+          component={NewsFeedItemScreen}
+          options={{title: 'Newsfeed Item'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-});

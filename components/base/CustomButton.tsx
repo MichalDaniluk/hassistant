@@ -14,32 +14,27 @@ export function CustomButton(props: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 2,
-  },
   button: {
-    borderRadius: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    borderRadius: 10,
     backgroundColor: '#fff',
-    alignSelf: 'flex-start',
-    width: 24,
-    height: 24,
+    borderWidth: 1,
+    borderColor: '#7B7B7B',
+    marginHorizontal: '1%',
+    marginBottom: 6,
+    minWidth: '25%',
     textAlign: 'center',
-    color: '#333',
-    border: '1px solid #000',
   },
 
   buttonLabel: {
     fontSize: 12,
-    fontWeight: '500',
-    color: 'coral',
+    fontWeight: '600',
+    color: '#7B7B7B',
+    textAlign: 'center',
   },
   selectedLabel: {
-    color: 'white',
-  },
-  label: {
-    textAlign: 'center',
-    marginBottom: 10,
-    fontSize: 24,
+    backgroundColor: '#4FCBC2',
+    color: '#fff',
   },
 });

@@ -3,17 +3,32 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 
 import {ItemProps} from '../../Types/ItemProps';
 
-const Item: FC<ItemProps> = props => {
+const Item = ({
+  id,
+  title,
+  avatar,
+  author,
+  heart,
+  images,
+  description,
+  showItem,
+}) => {
   return (
     <View style={styles.item}>
       <View style={styles.header}>
-        <Image style={styles.avatar} source={{uri: props.avatar}} />
-        <Text style={styles.author}>{props.author}</Text>
+        <Image style={styles.avatar} source={{uri: avatar}} />
+        <Text style={styles.author}>{author}</Text>
       </View>
-      <Text style={styles.title}>{props.title}</Text>
-      <Text style={styles.description}>{props.description}</Text>
-      <Text style={styles.link}>Więcej</Text>
-      <Image style={styles.image} source={{uri: props.images[0]}} />
+      <Text style={styles.title}>{title}</Text>
+      <View>
+        <Text style={styles.description}>
+          {description.substring(0, 100)}...
+        </Text>
+        <Text style={styles.link} onPress={() => showItem(id)}>
+          Więcej
+        </Text>
+      </View>
+      {images[0] && <Image style={styles.image} source={{uri: images[0]}} />}
     </View>
   );
 };
@@ -22,7 +37,8 @@ export default Item;
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#fff',
+    position: 'relative',
+    backgroundColor: '#F3F2F2',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -64,8 +80,12 @@ const styles = StyleSheet.create({
     color: '#7B7B7B',
   },
   link: {
+    position: 'absolute',
+    right: 4,
+    bottom: 0,
     fontSize: 12,
     color: '#4FCBC2',
     fontWeight: '500',
+    alignText: 'right',
   },
 });
