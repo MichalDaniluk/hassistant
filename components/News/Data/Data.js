@@ -1,40 +1,33 @@
-export const DATA = [
+const RECORDS_PER_FETCH = 10;
+
+export const data = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    id: 1,
     title: 'Jaki trening wybrac na poczatek',
     author: 'Antoni Kowalski',
-    avatar:
-      'https://117.wpcdnnode.com/nationaalmsfonds.nl/wp-content/uploads/2022/05/erik-face-it-nationaal-ms-fonds.png',
+    avatar: 'face1.png',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
     heart: 32,
-    images: [
-      'https://drgaja.pl/images/obcowanie-z-natura/korzysci-z-natury-dla-kobiet.jpg',
-      'https://naukawpolsce.pl/sites/default/files/styles/strona_glowna_slider_750x420/public/202201/41341373_41341348.jpg?itok=-fvnfMyd',
-    ],
+    images: ['woman.jpg'],
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    id: 2,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
     heart: 32,
-    images: [
-      'https://naukawpolsce.pl/sites/default/files/styles/strona_glowna_slider_750x420/public/202201/41341373_41341348.jpg?itok=-fvnfMyd',
-      'https://drgaja.pl/images/obcowanie-z-natura/korzysci-z-natury-dla-kobiet.jpg',
-    ],
+    images: ['leaf.jpg'],
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97233',
+    id: 3,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
@@ -42,11 +35,10 @@ export const DATA = [
     images: [],
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97123',
+    id: 4,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
@@ -54,11 +46,10 @@ export const DATA = [
     images: [],
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91a2a233',
+    id: 5,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
@@ -66,11 +57,10 @@ export const DATA = [
     images: [],
   },
   {
-    id: '3ac68afc-c235-48d3-a4f8-fbd91aa97233',
+    id: 6,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
@@ -78,11 +68,10 @@ export const DATA = [
     images: [],
   },
   {
-    id: '37s68afc-c605-48d3-a4f8-fbd91aa97233',
+    id: 7,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
@@ -90,15 +79,82 @@ export const DATA = [
     images: [],
   },
   {
-    id: '3ac68a998-c605-48d3-a4f8-fbd91aa97233',
+    id: 8,
     title: 'Wtorkowa medytacja',
     author: 'Wiktor Noculski',
-    avatar:
-      'https://www.elle.pl/media/cache/default_view/uploads/media/default/0008/61/baby-face-u-mezczyzn-jak-wygladac-bardziej-mesko-i-dojrzale-dzieki-wlosom-i-zarostowi.jpeg',
+    avatar: 'baby.jpeg',
     description:
       'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
     added: '2022-01-01 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: 9,
+    title: 'Ostatni wpis na liscie',
+    author: 'Wiktor Noculski',
+    avatar: 'baby.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-12 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: 10,
+    title: 'Ostatni wpis na liscie',
+    author: 'Wiktor Noculski',
+    avatar: 'baby.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-12 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: 11,
+    title: 'Ostatni wpis na liscie',
+    author: 'Wiktor Noculski',
+    avatar: 'baby.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-12 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: 12,
+    title: 'Ostatni wpis na liscie',
+    author: 'Wiktor Noculski',
+    avatar: 'baby.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-12 10:00:00',
+    heart: 32,
+    images: [],
+  },
+  {
+    id: 13,
+    title: 'Ostatni wpis na liscie',
+    author: 'Wiktor Noculski',
+    avatar: 'baby.jpeg',
+    description:
+      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.',
+    added: '2022-01-12 10:00:00',
     heart: 32,
     images: [],
   },
 ];
+
+export const fetchResults = (startingId = 0) => {
+  let obj = [];
+
+  for (let i = startingId; i < startingId + RECORDS_PER_FETCH; i++) {
+    if (data[i] === undefined) {
+      break;
+    }
+
+    obj.push(data[i]);
+  }
+  return obj;
+};

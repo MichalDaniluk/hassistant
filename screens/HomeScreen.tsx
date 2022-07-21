@@ -1,7 +1,18 @@
 import {View, Button, StyleSheet, Image} from 'react-native';
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 
 const HomeScreen = ({navigation}) => {
+  useLayoutEffect(() => {
+    navigation.setOptions(
+      {
+        title: 'Witaj w aplikacji Health Nation',
+        headerTitleAlign: 'center',
+        headerBackTitleVisible: false,
+      },
+      [navigation],
+    );
+  });
+
   return (
     <View style={styles.container}>
       <Image source={require('./logo.png')} style={styles.logo} />

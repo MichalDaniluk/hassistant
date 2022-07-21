@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 
 import {ItemProps} from '../../Types/ItemProps';
 
-const Item = ({
+const Item: FC<ItemProps> = ({
   id,
   title,
   avatar,

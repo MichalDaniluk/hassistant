@@ -1,30 +1,72 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, Image, Text, TextInput} from 'react-native';
+import React, {useState, useLayoutEffect} from 'react';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TextInput,
+  Pressable,
+  Alert,
+} from 'react-native';
 
-import {DATA} from '../components/News/Data/Data';
 import {ItemProps} from '../Types/ItemProps';
 import UserAvatar from '../components/base/UserAvatar';
+import {useDispatch, useSelector} from 'react-redux';
 
-export function AddNewsFeedItemScreen() {
+export function AddNewsFeedItemScreen({navigation}) {
+  const dispatch = useDispatch();
+  const listItems = useSelector(state => state.list.items);
   const [item, setItem] = useState<ItemProps>({
-    id: '',
+    id: listItems.length + 1,
     title: '',
     description: '',
-    avatar: '',
-    author: '',
+    avatar: 'baby.jpeg',
+    author: 'Antoni Kowalski',
     added: '',
     heart: 0,
     images: [],
   });
 
+  const addNewsFeedItem = () => {
+    dispatch({
+      type: 'ADD_TO_LIST',
+      items: [...listItems, item],
+    });
+    navigation.navigate('NewsFeed');
+  };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'Nowy post',
+      headerTitleAlign: 'center',
+      headerBackTitleVisible: false,
+    });
+  }, [navigation]);
+
+  const setTitle = title => {
+    setItem({...item, title});
+  };
+
+  const setDescription = desc => {
+    setItem({...item, description: desc});
+  };
+
   return (
     <View style={styles.container}>
+      <Pressable onPress={addNewsFeedItem}>
+        <Text style={styles.link}>Dodaj</Text>
+      </Pressable>
       <View style={styles.row}>
         <View style={{flex: 1}}>
           <Text style={styles.label}>Dodaj tytuł:</Text>
         </View>
         <View style={{flex: 3}}>
-          <TextInput placeholder="Wpisz tytuł" autoFocus={true} />
+          <TextInput
+            placeholder="Wpisz tytuł"
+            autoFocus={true}
+            onChangeText={title => setTitle(title)}
+            value={item.title}
+          />
         </View>
       </View>
       <View style={styles.rowBody}>
@@ -36,6 +78,7 @@ export function AddNewsFeedItemScreen() {
             multiline={true}
             numberOfLines={5}
             placeholder="Napisz coś..."
+            onChangeText={desc => setDescription(desc)}
           />
         </View>
       </View>

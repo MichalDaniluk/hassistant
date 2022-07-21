@@ -1,7 +1,14 @@
-import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Image, Text, Alert} from 'react-native';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
+import {
+  View,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  Text,
+  StatusBar,
+} from 'react-native';
 
-import {DATA} from '../components/News/Data/Data';
+import {data} from '../components/News/Data/Data';
 import {ItemProps} from '../Types/ItemProps';
 
 export function NewsFeedItemScreen({navigation, route}) {
@@ -17,13 +24,27 @@ export function NewsFeedItemScreen({navigation, route}) {
   });
 
   useEffect(() => {
-    //Alert.alert('ID:' + route.params.id);
-    const itemFilter = DATA.filter(it => it.id === route.params.id);
+    const itemFilter = data.filter(it => it.id === route.params.id);
     setItem(itemFilter[0]);
-  }, []);
+  }, [route.params.id]);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: item.title,
+      headerTitleAlign: 'center',
+      headerBackTitleVisible: false,
+    });
+  }, [navigation, item.title]);
 
   return (
-    <View style={styles.item}>
+    <SafeAreaView style={styles.item}>
+      <StatusBar
+        animated={true}
+        backgroundColor="#61dafb"
+        barStyle="default"
+        showHideTransition="slide"
+        hidden={false}
+      />
       <View style={styles.header}>
         <View>
           <Image style={styles.avatar} source={{uri: item.avatar}} />
@@ -39,7 +60,7 @@ export function NewsFeedItemScreen({navigation, route}) {
       {item.images[0] && (
         <Image style={styles.image} source={{uri: item.images[0]}} />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
