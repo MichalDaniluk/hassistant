@@ -1,5 +1,5 @@
 import React, {useLayoutEffect} from 'react';
-import {FlatList, View, StyleSheet, Image} from 'react-native';
+import {FlatList, View, StyleSheet, Image, Text} from 'react-native';
 
 import {TopButtons} from '../components/News/TopButtons';
 import Search from '../components/News/Search';
@@ -26,8 +26,12 @@ export function NewsFeedScreen({navigation}) {
     });
   });
 
-  const showItemScreen = (id: string) => {
+  const showItemScreen = id => {
     navigation.navigate('NewsFeedItem', {id});
+  };
+
+  const showAddItem = () => {
+    navigation.navigate('AddNewsFeedItem');
   };
 
   const renderItem = ({item}) => (
@@ -48,7 +52,9 @@ export function NewsFeedScreen({navigation}) {
     <View style={styles.container}>
       <Search />
       <TopButtons />
-
+      <Text style={styles.link} onPress={() => showAddItem()}>
+        dodaj post
+      </Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -66,6 +72,15 @@ const styles = StyleSheet.create({
     height: 20,
     width: 20,
     borderRadius: 50,
+  },
+  link: {
+    fontSize: 12,
+    color: '#4FCBC2',
+    fontWeight: '500',
+    alignText: 'right',
+    marginLeft: 12,
+    marginTop: 12,
+    marginBottom: 12,
   },
 });
 

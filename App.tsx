@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {NewsFeedScreen} from './screens/NewsFeedScreen';
 import {NewsFeedItemScreen} from './screens/NewsFeedItemScreen';
+import {AddNewsFeedItemScreen} from './screens/AddNewsFeedItemScreen';
 import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
@@ -35,6 +36,11 @@ export default function App() {
           name="NewsFeedItem"
           component={NewsFeedItemScreen}
           options={{title: 'Newsfeed Item'}}
+        />
+        <Stack.Screen
+          name="AddNewsFeedItem"
+          component={AddNewsFeedItemScreen}
+          options={{title: 'Nowy post'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
