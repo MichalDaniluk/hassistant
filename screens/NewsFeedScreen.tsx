@@ -1,23 +1,17 @@
 import React, {useLayoutEffect, useState, useEffect} from 'react';
-import {
-  FlatList,
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  Pressable,
-  SafeAreaView,
-} from 'react-native';
+import {FlatList, View, Text, Pressable, SafeAreaView} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {TopButtons} from '../components/News/TopButtons';
-import Search from '../components/News/Search';
-import UserAvatar from '../components/base/UserAvatar';
+import {TopButtons} from '@components/News/TopButtons';
+import Search from '@components/News/Search';
+import UserAvatar from '@components/base/UserAvatar';
 
-import {fetchResults} from '../components/News/Data/Data';
-import Item from '../components/News/Item';
+import {fetchResults} from '@components/News/Data/Data';
+import Item from '@components/News/Item';
+
+import styles from './NewsFeedStyles';
 
 //import ItemProps from '../Types/ItemProps';
 
@@ -141,31 +135,5 @@ export function NewsFeedScreen({navigation, route}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#F3F2F2',
-  },
-  userAvatar: {
-    height: 20,
-    width: 20,
-    borderRadius: 50,
-  },
-  link: {
-    fontSize: 12,
-    color: '#4FCBC2',
-    fontWeight: '500',
-    alignText: 'right',
-    marginLeft: 12,
-    marginTop: 12,
-    marginBottom: 12,
-  },
-  footer: {
-    padding: 15,
-  },
-  footerText: {
-    fontWeight: '600',
-  },
-});
 
 export default NewsFeedScreen;

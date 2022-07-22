@@ -1,17 +1,11 @@
 import React, {useState, useLayoutEffect} from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  TextInput,
-  Pressable,
-  Alert,
-} from 'react-native';
+import {View, Image, Text, TextInput, Pressable} from 'react-native';
 
-import {ItemProps} from '../Types/ItemProps';
-import UserAvatar from '../components/base/UserAvatar';
+import {ItemProps} from '@types/ItemProps';
+import UserAvatar from '@components/base/UserAvatar';
 import {useDispatch, useSelector} from 'react-redux';
+
+import styles from './AddNewsFeedStyles';
 
 export function AddNewsFeedItemScreen({navigation}) {
   const dispatch = useDispatch();
@@ -40,6 +34,13 @@ export function AddNewsFeedItemScreen({navigation}) {
       title: 'Nowy post',
       headerTitleAlign: 'center',
       headerBackTitleVisible: false,
+      headerRight: () => (
+        <View>
+          <Pressable onPress={addNewsFeedItem}>
+            <Text style={styles.link}>dodaj</Text>
+          </Pressable>
+        </View>
+      ),
     });
   }, [navigation]);
 
@@ -53,9 +54,6 @@ export function AddNewsFeedItemScreen({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={addNewsFeedItem}>
-        <Text style={styles.link}>Dodaj</Text>
-      </Pressable>
       <View style={styles.row}>
         <View style={{flex: 1}}>
           <Text style={styles.label}>Dodaj tytuł:</Text>
@@ -90,7 +88,7 @@ export function AddNewsFeedItemScreen({navigation}) {
           marginLeft: 12,
         }}>
         <View>
-          <Image source={require('./addImage.png')} />
+          <Image source={require('@assets/images/addImage.png')} />
         </View>
         <View>
           <Text style={styles.link}>Dodaj zdjęcie</Text>
@@ -99,48 +97,5 @@ export function AddNewsFeedItemScreen({navigation}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'relative',
-    backgroundColor: '#F3F2F2',
-    marginLeft: 0,
-    marginTop: 40,
-  },
-  title: {},
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#C4C4C4',
-    height: 48,
-    padding: 4,
-    paddingLeft: 24,
-  },
-  rowBody: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#C4C4C4',
-    height: 150,
-    padding: 4,
-    paddingLeft: 24,
-  },
-  label: {
-    color: '#28235F',
-    fontWeight: '600',
-  },
-  avatar: {
-    borderRadius: 50,
-    width: 50,
-    height: 50,
-  },
-  link: {
-    color: '#28235F',
-    fontSize: 14,
-    fontWeight: '600',
-    marginLeft: 12,
-  },
-});
 
 export default AddNewsFeedItemScreen;
